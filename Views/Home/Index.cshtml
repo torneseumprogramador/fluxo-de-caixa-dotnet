@@ -13,11 +13,11 @@
         </div>
         <div class="div-inline-block">
             <b>Receitas</b><br>
-            R$ @ViewBag.receitas
+            R$ @ViewBag.receitas.ToString("#0.00")
         </div>
         <div class="div-inline-block despesas">
             <b>Despesas</b><br>
-            R$ @ViewBag.despesas
+            R$ @ViewBag.despesas.ToString("#0.00")
         </div>
     </div>
 
@@ -52,10 +52,10 @@
                     <td>@item.Tipo</td>
                     <td>
                         @if (@item.Status == fluxo_de_caixa_dotnet.Models.Status.Saida){
-                           <span>- R$ @item.Valor</span>
+                           <span>- R$ @item.Valor.ToString("#0.00")</span>
                         }
                         else{
-                           <span>R$ @item.Valor</span>
+                           <span>R$ @item.Valor.ToString("#0.00")</span>
                         }
                     </td>
                     <td>@item.Status</td>
