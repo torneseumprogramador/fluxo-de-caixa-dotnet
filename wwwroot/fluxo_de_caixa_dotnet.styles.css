@@ -1,0 +1,53 @@
+.div-inline-block{
+    display: inline-block;
+    background-color: #e5e5e5;
+    height: 70px;
+    width: 30%;
+    padding: 10px;
+}
+
+.despesas{
+    background-color: red;
+}
+
+.div-inline-block-pesquisa{
+    display: inline-block;
+}
+
+.pesquisa{
+    margin-top: 20px;
+}
+
+.input-adicionar{
+    width: 80%;
+    text-align: left;
+}
+
+
+.input-adicionar input{
+    width: 80%;
+    padding: 5px;
+}
+
+.btn-adicionar{
+    text-align: right;
+}
+
+.tabela{
+    margin-top: 20px;
+}
+.tabela thead{
+    background-color: #e8e8e8;
+}
+
+.despesa-legenda{
+    width: 50px;
+    height: 10px;
+    background-color: red;
+}
+
+.receita-legenda{
+    width: 50px;
+    height: 10px;
+    background-color: blue;
+}

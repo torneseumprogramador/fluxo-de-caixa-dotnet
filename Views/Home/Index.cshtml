@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Sistema de Fluxo de caixa</h1>
+    <hr>
+
+    <div>
+        <div class="div-inline-block">
+            <b>Valor Total</b><br>
+            R$ 200,00
+        </div>
+        <div class="div-inline-block">
+            <b>Receitas</b><br>
+            R$ 200,00
+        </div>
+        <div class="div-inline-block despesas">
+            <b>Despesas</b><br>
+            R$ 200,00
+        </div>
+    </div>
+
+    <div class="pesquisa">
+        <div class="div-inline-block-pesquisa input-adicionar">
+            <form action="/">
+                <input name="tipo" type="text" placeholder="Digite algo">
+                <button class="btn btn-primary">
+                    Buscar
+                </button>
+            </form>
+        </div>
+        <div class="div-inline-block-pesquisa btn-adicionar">
+            <a href="/adicionar" class="btn btn-primary">Adicionar</a>
+        </div>
+    </div>
+
+    <table class="table tabela">
+        <thead>
+            <tr>
+                <th>TIPO</th>
+                <th>VALOR</th>
+                <th>STATUS</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.lista)
+            {
+                <tr>
+                    <td>@item.Tipo</td>
+                    <td>R$ @item.Valor</td>
+                    <td>@item.Status</td>
+                    <td><div class="despesa-legenda"></div></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
