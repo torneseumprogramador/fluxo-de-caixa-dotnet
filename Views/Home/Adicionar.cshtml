@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Adicionar";
+}
+<h1>Adicionar item ao caixa</h1>
+<hr>
+
+<form action="/adicionar-no-caixa" method="post">
+    <div class="mb-3">
+        <label for="tipo" class="form-label">Tipo</label>
+        <input type="text" class="form-control" id="tipo" name="tipo" required>
+    </div>
+    <div class="mb-3">
+        <label for="valor" class="form-label">Valor</label>
+        <input type="number" class="form-control" id="valor" name="valor" required>
+    </div>
+    <div class="mb-3">
+        <label for="status" class="form-label">Status</label>
+        <select class="form-select" id="status" name="status" required>
+            <option value="0">Entrada</option>
+            <option value="1">Saída</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form>
+

@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Dashboard";
 }
 
 <div class="text-center">
@@ -9,15 +9,15 @@
     <div>
         <div class="div-inline-block">
             <b>Valor Total</b><br>
-            R$ 200,00
+            R$ @ViewBag.valorTotal.ToString("#0.00")
         </div>
         <div class="div-inline-block">
             <b>Receitas</b><br>
-            R$ 200,00
+            R$ @ViewBag.receitas
         </div>
         <div class="div-inline-block despesas">
             <b>Despesas</b><br>
-            R$ 200,00
+            R$ @ViewBag.despesas
         </div>
     </div>
 
@@ -42,6 +42,7 @@
                 <th>VALOR</th>
                 <th>STATUS</th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -49,9 +50,26 @@
             {
                 <tr>
                     <td>@item.Tipo</td>
-                    <td>R$ @item.Valor</td>
+                    <td>
+                        @if (@item.Status == fluxo_de_caixa_dotnet.Models.Status.Saida){
+                           <span>- R$ @item.Valor</span>
+                        }
+                        else{
+                           <span>R$ @item.Valor</span>
+                        }
+                    </td>
                     <td>@item.Status</td>
-                    <td><div class="despesa-legenda"></div></td>
+                    <td>
+                        @if (@item.Status == fluxo_de_caixa_dotnet.Models.Status.Saida){
+                            <div class="despesa-legenda"></div>
+                        }
+                        else{
+                            <div class="receita-legenda"></div>
+                        }
+                    </td>
+                    <td style="width: 20px;">
+                       <a href="#" onclick="if(confirm('confirma?')){ window.location.href = '/excluir/@item.Id' }">X</a>
+                    </td>
                 </tr>
             }
         </tbody>
